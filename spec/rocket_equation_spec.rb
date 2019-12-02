@@ -8,7 +8,7 @@ describe RocketEquation do
     mass = 12
     actual_fuel_amount = RocketEquation.new(mass).calculate_fuel
 
-    expect(actual_fuel_amount).to eq (expected_fuel_amount)
+    expect(actual_fuel_amount).to eq(expected_fuel_amount)
   end
 
   it 'returns a fuel amount of 2 when mass is 14' do
@@ -17,7 +17,7 @@ describe RocketEquation do
     mass = 14
     actual_fuel_amount = RocketEquation.new(mass).calculate_fuel
 
-    expect(actual_fuel_amount).to eq (expected_fuel_amount)
+    expect(actual_fuel_amount).to eq(expected_fuel_amount)
   end
 
   it 'returns a fuel amount of 654 when mass is 1969' do
@@ -26,7 +26,7 @@ describe RocketEquation do
     mass = 1969
     actual_fuel_amount = RocketEquation.new(mass).calculate_fuel
 
-    expect(actual_fuel_amount).to eq (expected_fuel_amount)
+    expect(actual_fuel_amount).to eq(expected_fuel_amount)
   end
 
   it 'returns a fuel amount of 33583 when mass is 100756' do
@@ -35,6 +35,15 @@ describe RocketEquation do
     mass = 100756
     actual_fuel_amount = RocketEquation.new(mass).calculate_fuel
 
-    expect(actual_fuel_amount).to eq (expected_fuel_amount)
+    expect(actual_fuel_amount).to eq(expected_fuel_amount)
+  end
+
+  it 'returns sum of all masses in file' do
+    expected_fuel_amount = 34_241
+
+    filename = './spec/fixtures/day_1_test.txt'
+    actual_fuel_amount = RocketEquation.calculate_fuel_for_file(filename)
+
+    expect(actual_fuel_amount).to eq(expected_fuel_amount)
   end
 end
