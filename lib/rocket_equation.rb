@@ -25,7 +25,7 @@ class RocketEquation
     if calculate_fuel >= 0
       calculate_fuel + self.class.new(calculate_fuel).calculate_net_fuel
     else
-      [calculate_fuel, 0].max
+      0
     end
   end
 end
